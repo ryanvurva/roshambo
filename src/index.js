@@ -36,8 +36,6 @@ const handleButtonClick = (event) => {
     }
   }
 
-  $('span.player').textContent = playerwins
-  $('span.computer').textContent = computerwins
   if (playerwins >= 2) {
     playerbouts++
     resetRound()
@@ -46,15 +44,17 @@ const handleButtonClick = (event) => {
     computerbouts++
     resetRound()
   }
+  $('span.player').textContent = playerwins
+  $('span.computer').textContent = computerwins
 
-  $('span.playerbout').textContent = playerbouts
-  $('span.computerbout').textContent = computerbouts
   if (playerbouts >= 2) {
     gameOver(true)
   }
   if (computerbouts >= 2) {
     gameOver(false)
   }
+  $('span.playerbout').textContent = playerbouts
+  $('span.computerbout').textContent = computerbouts
 }
 
 const getComputerMove = () => {
@@ -92,10 +92,11 @@ const resetGame = () => {
 
 const resetRound = () => {
   if (playerbouts >= 1 || computerbouts >= 1) {
-    playerbouts = 0
-    computerbouts = 0
-    $('span.playerbout').textContent = playerbouts
-    $('span.computerbout').textContent = computerbouts
+    playerwins = 0
+    computerwins = 0
+    $('span.player').textContent = playerwins
+    $('span.computer').textContent = computerwins
+    console.log('here')
   }
 }
 

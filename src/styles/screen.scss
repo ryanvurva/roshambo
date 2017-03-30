@@ -23,6 +23,19 @@ main {
   transition: filter 400ms ease-out;
 }
 
+.leaderboard {
+  display: flex;
+  // justify-content: space-between;
+}
+
+.playerVictories {
+  // padding-right: 70%;
+}
+
+.computerVictories {
+  // padding-left: 70%;
+}
+
 section {
   display: flex;
   align-items: center;
