@@ -7,6 +7,8 @@ let playerwins = 0
 let computerwins = 0
 let playerbouts = 0
 let computerbouts = 0
+let playerVictories = 0
+let computerVictories = 0
 
 const handleButtonClick = (event) => {
   const player = event.target.className
@@ -48,13 +50,17 @@ const handleButtonClick = (event) => {
   $('span.computer').textContent = computerwins
 
   if (playerbouts >= 2) {
+    playerVictories++
     gameOver(true)
   }
   if (computerbouts >= 2) {
+    computerVictories++
     gameOver(false)
   }
   $('span.playerbout').textContent = playerbouts
   $('span.computerbout').textContent = computerbouts
+  $('span.playerVictories').textContent = playerVictories
+  $('span.computerVictories').textContent = computerVictories
 }
 
 const getComputerMove = () => {
